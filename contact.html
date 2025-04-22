@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me</title>
+  <style>
+    :root {
+      --primary-color: #006BB3;
+      --accent-color: #EDA539;
+      --bg-color: #f4f4f4;
+      --card-bg: #ffffff;
+      --text-color: #333;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color:  rgba(246, 97, 17, 0.85);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 2.5rem;
+    }
+
+    .wote {
+      background-color: var(--card-bg);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 600px;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .wote:hover {
+      transform: scale(1.01);
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+      color: var(--text-color);
+      font-size: 1rem;
+    }
+
+    .contact-info a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .message-box label {
+      font-weight: bold;
+      color: var(--text-color);
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .footer {
+    background-color: #006BB3;
+    color: white;
+    padding: 15px 30px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.95rem;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer p {
+    margin: 5px 0;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  @media (max-width: 600px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-right {
+      text-align: left;
+    }
+  }
+
+    button {
+      margin-top: 10px;
+      padding: 12px 20px;
+      background-color:  #006BB3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+
+    button:hover {
+      background-color: #d18c2d;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .wote {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contact Me</h1><hr>
+
+  <div class="wote">
+    <div class="contact-info">
+      <p><strong>Phone Number:</strong> 0621782837</p>
+      <p><strong>Email:</strong> <a href="mailto:kwekamoses47@gmail.com">kwekamoses47@gmail.com</a></p>
+      <p><strong>Location:</strong> Dodoma, Tanzania</p>
+    </div>
+
+    <div class="message-box">
+      <label for="message">Your Message:</label>
+      <textarea id="message" placeholder="Type your message here..."></textarea>
+      <br />
+      <button onclick="sendEmail()">Send Message</button>
+    </div>
+  </div>
+  <footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Moses Kweka. All rights reserved.</p>
+    <p class="footer-right">Designed by Kweka Dev</p>
+  </div>
+</footer>
+
+  <script>
+    function sendEmail() {
+      const message = document.getElementById('message').value;
+      const email = 'kwekamoses47@gmail.com';
+      const subject = 'Message from Contact Page';
+      const body = encodeURIComponent(message);
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }
+  </script>
+
+</body>
+</html>

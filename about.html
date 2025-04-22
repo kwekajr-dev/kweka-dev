@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Moses Kweka - Developer</title>
+  <style>
+    /* Modern color scheme and variables */
+    :root {
+      --primary-color: #ff7b25;
+      --secondary-color: #2c3e50;
+      --accent-color: #3498db;
+      --text-light: #ffffff;
+      --text-dark: #2c3e50;
+      --gradient-bg: linear-gradient(135deg, #ff7b25 0%, #ff9a44 100%);
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--gradient-bg);
+      color: var(--text-light);
+      padding: 2rem;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h1::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 4px;
+      background-color: var(--text-light);
+      bottom: -10px;
+      left: 20%;
+      border-radius: 2px;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-left: 1rem;
+    }
+    
+    h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background-color: var(--primary-color);
+      border-radius: 2px;
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      font-size: 1.05rem;
+    }
+    
+    section {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 16px;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-bg);
+    }
+    
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    ul {
+      list-style: none;
+      margin-left: 0.5rem;
+    }
+    
+    li {
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 1.5rem;
+      color: var(--text-dark);
+    }
+    
+    li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+    
+    strong {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: var(--transition);
+    }
+    
+    a:hover::after {
+      width: 100%;
+    }
+    
+    .contact-section {
+      background: var(--secondary-color);
+      color: var(--text-light);
+    }
+    
+    .contact-section h2 {
+      color: var(--text-light);
+    }
+    
+    .contact-section p {
+      color: var(--text-light);
+    }
+    
+    .contact-section a {
+      color: var(--primary-color);
+    }
+    
+    .project-card {
+      border-left: 3px solid var(--primary-color);
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+    
+    .project-title {
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-description {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      section {
+        padding: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      section {
+        padding: 1.25rem;
+      }
+    }
+    .footer {
+    background-color: #006BB3;
+    color: white;
+    padding: 15px 30px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.95rem;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer p {
+    margin: 5px 0;
+    color:white;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  @media (max-width: 600px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-right {
+      text-align: left;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Moses Kweka</h1>
+      <p>Laravel Developer | Instructional Designer | Tech Enthusiast</p>
+    </header>
+    
+    <section>
+      <h2>About Me</h2>
+      <p>
+        My name is <strong>Moses Kweka</strong>, and I am a dedicated developer with a specialization in the Laravel framework. I hold a Bachelor of Science in Instructional Design and Information Technology from the University of Dodoma (UDOM) and the College of Information and Communication Engineering (CIVE).
+      </p>
+      <p>
+        With a strong foundation in programming languages such as PHP, JavaScript, Java, C++, and C#, I am passionate about creating efficient and user-friendly applications. My journey in technology began with a fascination for coding, and I have continuously sought to enhance my skills and knowledge in this dynamic field.
+      </p>
+    </section>
+  
+    <section>
+      <h2>Current Projects</h2>
+      <p>I am currently working on several exciting projects that showcase my skills and creativity:</p>
+      
+      <div class="project-card">
+        <div class="project-title"><strong>Sales Management System</strong></div>
+        <div class="project-description">A comprehensive solution for managing sales processes and customer relationships.</div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-title"><strong>Car Rental System</strong></div>
+        <div class="project-description">An application designed to streamline the car rental process for both customers and rental agencies.</div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-title"><strong>Kilimo Smart</strong></div>
+        <div class="project-description">A project aimed at enhancing agricultural practices through technology.</div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-title"><strong>My Personal Profile Site</strong></div>
+        <div class="project-description">A platform to showcase my work and connect with others in the tech community.</div>
+      </div>
+    </section>
+  
+    <section class="contact-section">
+      <h2>Get in Touch</h2>
+      <p>
+        I am always open to new opportunities and collaborations. Feel free to reach out to me via email at <a href="mailto:kwekamoses47@gmail.com">kwekamoses47@gmail.com</a>.
+      </p>
+    </section>
+  </div>
+  <footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Moses Kweka. All rights reserved.</p>
+    <p class="footer-right">Designed by Kweka Dev</p>
+  </div>
+</footer>
+</body>
+</html>
