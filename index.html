@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,18 +10,20 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
         body {
-        font-family: 'Poppins', sans-serif;
-        color: #fff;
-        line-height: 1.6;
-        background: url('{{ asset("images/web.jpg") }}') no-repeat center center fixed;
-        background-size: cover;
-        position: relative;
-}
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            line-height: 1.6;
+            background: url('{{ asset("images/web.jpg") }}') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            scroll-behavior: smooth;
+        }
 
         .logo {
             width: 40px;
             border-radius: 9px;
         }
+        
         body::before {
             content: '';
             position: absolute;
@@ -203,19 +204,20 @@
         }
         
         .project-image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    border: 2px solid #006BB3;
-    box-shadow: 0 4px 8px rgba(0, 107, 179, 0.2);
-    transition: transform 0.3s ease;
-}
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 2px solid #006BB3;
+            box-shadow: 0 4px 8px rgba(0, 107, 179, 0.2);
+            transition: transform 0.3s ease;
+        }
 
-.project-card:hover .project-image {
-    transform: scale(1.05);
-}
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
         .card, .project-card {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
@@ -370,66 +372,471 @@
             .cards-container, .projects-container {
                 grid-template-columns: 1fr;
             }
+            
+            .skills-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .testimonial-container {
+                flex-direction: column;
+            }
+            
+            .testimonial {
+                width: 100%;
+            }
         }
     
         .profile-box {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    text-align: left;
-    margin-bottom: 2rem;
-}
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            margin-bottom: 2rem;
+        }
 
-.profile-box .moses {
-    width: 180px;
-    height: 180px;
-    border-radius: 12px;
-    object-fit: cover;
-    border: 4px solid #006BB3;
-    box-shadow: 0 8px 15px rgba(0, 107, 179, 0.2);
-}
+        .profile-box .moses {
+            width: 180px;
+            height: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 4px solid #006BB3;
+            box-shadow: 0 8px 15px rgba(0, 107, 179, 0.2);
+        }
 
-.profile-text {
-    flex: 1;
-}
-
-@media (max-width: 768px) {
-    .profile-box {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .profile-box .logo {
-        margin-bottom: 1rem;
-    }
-}
-
+        .profile-text {
+            flex: 1;
+        }
+        
+        /* New CSS for added sections */
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .skill-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-icon {
+            font-size: 2rem;
+            color: #006BB3;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .skill-level {
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: #006BB3;
+            border-radius: 3px;
+        }
+        
+        .testimonial-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .testimonial-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .testimonial {
+            width: 30%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            position: relative;
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 3px solid #006BB3;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            color: rgba(0, 107, 179, 0.1);
+            position: absolute;
+            top: -2rem;
+            left: -1rem;
+            font-family: serif;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .testimonial-role {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .resume-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #006BB3;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: #006BB3;
+            border: 4px solid white;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-date {
+            color: #006BB3;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .timeline-desc {
+            color: #666;
+        }
+        
+        .contact-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #006BB3;
+        }
+        
+        .form-button {
+            background-color: #006BB3;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .form-button:hover {
+            background-color: #005490;
+        }
+        
+        /* Mobile menu for responsive design */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 107, 179, 0.95);
+                flex-direction: column;
+                padding: 1rem;
+                text-align: center;
+            }
+            
+            .header ul.show {
+                display: flex;
+            }
+            
+            .profile-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-box .moses {
+                margin-bottom: 1rem;
+            }
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #006BB3;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #005490;
+            transform: translateY(-5px);
+        }
+        
+        /* Stats counter section */
+        .stats-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #006BB3;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* Adding animation classes */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 1s ease-in-out;
+        }
+        
+        .animate-slide-in-left {
+            animation: slideInLeft 1s ease-in-out;
+        }
+        
+        .animate-slide-in-right {
+            animation: slideInRight 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        
         <h1><img src="images/logo.png" alt="Logo" class="logo">&nbsp;&nbsp;&nbsp; KWEKA DEV</h1>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="about.html">About/Knowledge</a></li>
-            <li><a href="contact.html">Contact</a></li>
+        <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        <ul id="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
     
-    <div class="content">
-    <div class="profile-box">
-    <img src="images/moses.jpg" alt="Moses Kweka" class="moses">
-    <div class="profile-text">
-        <h2>Hello, everyone!</h2>
-        <p class="credit">My name is Moses Kweka, a technology expert with a Bachelor's degree in Instructional Design and Information Technology from the University of Dodoma (UDOM), College of Informatics and Virtual Education. I specialize in software and web development with strong expertise in the Laravel framework. I'm also a skilled graphics designer, computer maintenance professional, and a trusted technology advisor in Virtual Reality (VR) and Augmented Reality (AR). With a passion for solving tech challenges and building smart digital solutions, I bring ideas to life through innovative and practical technology.</p>
-    </div>
-</div>
-        <button class="button">
+    <div class="content animate-fade-in" id="home">
+        <div class="profile-box">
+            <img src="images/moses.jpg" alt="Moses Kweka" class="moses">
+            <div class="profile-text">
+                <h2>Hello, everyone!</h2>
+                <p class="credit">My name is Moses Kweka, a technology expert with a Bachelor's degree in Instructional Design and Information Technology from the University of Dodoma (UDOM), College of Informatics and Virtual Education. I specialize in software and web development with strong expertise in the Laravel framework. I'm also a skilled graphics designer, computer maintenance professional, and a trusted technology advisor in Virtual Reality (VR) and Augmented Reality (AR). With a passion for solving tech challenges and building smart digital solutions, I bring ideas to life through innovative and practical technology.</p>
+            </div>
+        </div>
+        
+        <a href="#contact" class="button">
             Let's Talk
             <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -438,66 +845,422 @@
                     clip-rule="evenodd"
                 ></path>
             </svg>
-        </button>
+        </a>
         
-        <p>Check out my social media</p>
+        <div class="download-resume">
+            <a href="#" class="button">
+                Download Resume
+                <i class="fas fa-download"></i>
+            </a>
+        </div>
+        
+        <p>Connect with me on social media</p>
         <div class="social-links">
             <a href="https://www.instagram.com/moses___og"><i class="fab fa-instagram"></i></a>
             <a href="https://x.com/moses11726771"><i class="fab fa-twitter"></i></a>
             <a href="https://wa.me/255621782837"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://linkedin.com/in/moses-kweka"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/kweka-jr"><i class="fab fa-github"></i></a>
         </div>
     </div>
     
-    <h3 class="section-title">My Services</h3>
-    <div class="cards-container">
+    <div class="stats-section animate-slide-up">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-value" id="projects-count">30+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="clients-count">25+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="experience-count">4+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="awards-count">5+</div>
+                <div class="stat-label">Awards Won</div>
+            </div>
+        </div>
+    </div>
+    
+    <h3 class="section-title" id="services">My Services</h3>
+    <div class="cards-container animate-slide-up">
         <div class="card">
             <i class="fas fa-code"></i>
             <h4>Web Designer</h4>
-            <p>Creating beautiful, responsive and user-friendly websites tailored to meet client needs.</p>
+            <p>Creating beautiful, responsive and user-friendly websites tailored to meet client needs. Expert in HTML, CSS, JavaScript, and modern frameworks.</p>
         </div>
         <div class="card">
             <i class="fas fa-laptop-code"></i>
             <h4>Software Developer</h4>
-            <p>Building robust and scalable software solutions using modern technologies and best practices.</p>
+            <p>Building robust and scalable software solutions using modern technologies and best practices. Specialized in Laravel, PHP, and database design.</p>
         </div>
         <div class="card">
             <i class="fas fa-palette"></i>
             <h4>Graphics Designer</h4>
-            <p>Crafting stunning visual content that communicates your brand's message effectively.</p>
+            <p>Crafting stunning visual content that communicates your brand's message effectively. Expert in Adobe Creative Suite and modern design principles.</p>
         </div>
         <div class="card">
             <i class="fas fa-tools"></i>
             <h4>Computer Maintenance</h4>
-            <p>Professional computer repair, upgrades, and maintenance services to keep your systems running smoothly.</p>
+            <p>Professional computer repair, upgrades, and maintenance services to keep your systems running smoothly. Hardware and software troubleshooting.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-vr-cardboard"></i>
+            <h4>VR/AR Development</h4>
+            <p>Creating immersive virtual and augmented reality experiences for education, training, and entertainment applications using cutting-edge technologies.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h4>Technical Training</h4>
+            <p>Providing expert training in web development, software engineering, and technology implementation for individuals and organizations.</p>
         </div>
     </div>
     
+    <h3 class="section-title" id="skills">My Skills</h3>
+    <div class="skills-container animate-slide-up">
+        <div class="skill-item">
+            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+            <div class="skill-name">HTML5</div>
+            <div class="skill-level">
+                <div class="skill-progress" style="width: 95%;"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+            <div class="skill-name">CSS3</div>
+            <div class="skill-level">
+                <div class="skill-progress" style="width: 90%;"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon"><i class="fab fa-js"></i></div>
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-level">
+                <div class="skill-progress" style="width: 85%;"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon"><i class="fab fa-php"></i></div>
+            <div class="skill-name">PHP</div>
+            <div class="skill-level">
+                <div class="skill-progress" style="width: 90%;"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon"><i class="fab fa-laravel"></i></div>
+            <div class="skill-name">Laravel</div>
+            <div class="skill-level">
+                <div class="skill-progress" style="width: 95%;"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon"><i class="fab fa-react"></i></div>
+            <div class="skill-name">React</div>
+            <div class="skill-level">
+                <div class="skill-progress" style="width: 80%;"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon"><i class="fab fa-vuejs"></i></div>
+            <div class="skill-name">Vue.js</div>
+            <div class="skill-level">
+                <div class="skill-progress" style="width: 75%;"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon"><i class="fas fa-database"></i></div>
+            <div class="skill-name">MySQL</div>
+            <div class="skill-level">
+                <div class="skill-progress" style="width: 90%;"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon"><i class="fab fa-aws"></i></div>
+            <div class="skill-name">AWS</div>
+            <div class="skill-level">
+                <div class="skill-progress" style="width: 70%;"></div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+            <div class="skill-name">Adobe PS</div>
+            <div class="skill-level">
+                <div class="skill-progress" style="width: 85%;"></div>
+            </div>
+        </div>
+    </div>
     
-<h3 class="section-title">My Projects</h3>
-<div class="projects-container">
-    <div class="project-card">
-        <img src="images/jani.jpg" alt="Kilimo Smart" class="project-image">
-        <h4>Kilimo Smart</h4>
-        <p>An agricultural technology solution designed to help farmers optimize crop production.</p>
+    <h3 class="section-title" id="projects">My Projects</h3>
+    <div class="projects-container animate-slide-up">
+        <div class="project-card">
+            <img src="images/dasboard.png" alt="Kilimo Smart" class="project-image">
+            <h4>Kilimo Smart</h4>
+            <p>An agricultural technology solution designed to help farmers optimize crop production through data analysis and smart recommendations.</p>
+            <a href="https://github.com/kwekajr-dev/kilimo-smart" class="button" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.4rem 0.8rem;">
+                View Project
+                <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i>
+            </a>
+        </div>
+        <div class="project-card">
+            <img src="images/car.jpeg" alt="Online Car Rental System" class="project-image">
+            <h4>Online Car Rental System</h4>
+            <p>A comprehensive platform for booking and managing car rentals with an intuitive interface, payment processing, and fleet management.</p>
+            <a href="https://github.com/kwekajr-dev/car-rental-system" class="button" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.4rem 0.8rem;">
+                View Project
+                <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i>
+            </a>
+        </div>
+        <div class="project-card">
+            <img src="images/commerce.jpeg" alt="E-commerce" class="project-image">
+            <h4>E-commerce Platform</h4>
+            <p>A feature-rich online shopping platform with secure payment processing, inventory management, and personalized user experience.</p>
+            <a href="https://github.com/kwekajr-dev/E-commerce" class="button" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.4rem 0.8rem;">
+                View Project
+                <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i>
+            </a>
+        </div>
+        <div class="project-card">
+            <img src="images/profile.jpeg" alt="My Profile Site" class="project-image">
+            <h4>My Profile Website</h4>
+            <p>A personal portfolio website showcasing my skills, services, and projects built with modern web technologies and responsive design.</p>
+            <a href="https://github.com/kwekajr-dev/kweka-profile" class="button" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.4rem 0.8rem;">
+                View Project
+                <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i>
+            </a>
+        </div>
+        <div class="project-card">
+            <img src="images/vr.jpeg" alt="VR Training Module" class="project-image">
+            <h4>VR Training Module</h4>
+            <p>An immersive virtual reality training application for corporate clients to train employees in safety procedures and equipment operation.</p>
+            <a href="https://virual reality" class="button" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.4rem 0.8rem;">
+                View Project
+                <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i>
+            </a>
+        </div>
+        <div class="project-card">
+            <img src="images/school.jpeg" alt="School Management System" class="project-image">
+            <h4>School Management System</h4>
+            <p>A comprehensive system for educational institutions to manage students, staff, classes, and administrative tasks efficiently.</p>
+            <a href="https://github.com/kwekajr-dev/uni-connect" class="button" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.4rem 0.8rem;">
+                View Project
+                <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i>
+            </a>
+        </div>
     </div>
-    <div class="project-card">
-        <img src="images/car.jpeg" alt="Online Car Rental System" class="project-image">
-        <h4>Online Car Rental System</h4>
-        <p>A comprehensive platform for booking and managing car rentals with an intuitive interface.</p>
+    
+    <h3 class="section-title" id="testimonials">Testimonials</h3>
+    <div class="testimonial-section animate-slide-up">
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <img src="images/brown.jpeg" alt="John Doe" class="testimonial-img">
+                <p class="testimonial-text">Moses is an exceptional web developer. He created a beautiful e-commerce website for my business that exceeded all expectations. His attention to detail and technical knowledge are outstanding.</p>
+                <h4 class="testimonial-author">Brown chongolo</h4>
+                <p class="testimonial-role">CEO, TechSolutions Inc.</p>
+            </div>
+            <div class="testimonial">
+                <img src="images/caro.jpeg" alt="Sarah Johnson" class="testimonial-img">
+                <p class="testimonial-text">Working with Moses was a pleasure. He understood our requirements perfectly and delivered a school management system that has dramatically improved our administrative processes.</p>
+                <h4 class="testimonial-author">Caloline Raphael</h4>
+                <p class="testimonial-role">Principal, Bright Future Academy</p>
+            </div>
+            <div class="testimonial">
+                <img src="images/neema.jpeg" alt="Michael Brown" class="testimonial-img">
+                <p class="testimonial-text">Moses developed an innovative AR application for our product showcase that has revolutionized how we present to clients. His expertise in emerging technologies is truly impressive.</p>
+                <h4 class="testimonial-author">Dorrah dastan</h4>
+                <p class="testimonial-role">Marketing Director, InnovateTech</p>
+            </div>
+        </div>
     </div>
-    <div class="project-card">
-        <img src="images/commerce.jpeg" alt="E-commerce" class="project-image">
-        <h4>E-commerce</h4>
-        <p>A feature-rich online shopping platform with secure payment processing and inventory management.</p>
+    
+    <h3 class="section-title" id="resume">My Experience</h3>
+    <div class="resume-section animate-fade-in">
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content animate-slide-in-right">
+                    <div class="timeline-date">2023 - Present</div>
+                    <h3 class="timeline-title">Full stack Developer</h3>
+                    <p class="timeline-desc">TechSolve Solutions Ltd. - Leading complex web development projects and mentoring junior developers. Implemented cutting-edge technologies to enhance client websites.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content animate-slide-in-left">
+                    <div class="timeline-date">2021 - 2023</div>
+                    <h3 class="timeline-title">Full Stack Developer</h3>
+                    <p class="timeline-desc">DigiCraft Studios - Developed and maintained web applications using Laravel, Vue.js, and MySQL. Collaborated with design teams to implement responsive UI/UX.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content animate-slide-in-right">
+                    <div class="timeline-date">2019 - 2021</div>
+                    <h3 class="timeline-title">Web Developer</h3>
+                    <p class="timeline-desc">InnoEdge Technologies - Created websites and web applications for various clients. Focused on e-commerce solutions and content management systems.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content animate-slide-in-left">
+                    <div class="timeline-date">2018 - 2019</div>
+                    <h3 class="timeline-title">Junior Developer</h3>
+                    <p class="timeline-desc">WebTech Tanzania - Started career as a junior developer working on front-end development and basic back-end functionality for small business websites.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="project-card">
-        <img src="images/profile.jpeg" alt="My Profile Site" class="project-image">
-        <h4>My Profile Site</h4>
-        <p>A personal portfolio website showcasing my skills, services, and projects.</p>
+    
+    <h3 class="section-title" id="contact">Contact Me</h3>
+    <div class="contact-section animate-slide-up">
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" id="subject" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea id="message" class="form-control" rows="5" required></textarea>
+                </div>
+                <button  class="form-button"><a href="mailto:kwekamoses47@gmail.com">Send Message</a></button>
+            </form>
+        </div>
     </div>
-</div>
+    
     <footer>
-        <p>&copy; 2025 Moses Kweka. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="social-links" style="margin-bottom: 1.5rem;">
+                <a href="https://www.instagram.com/moses___og"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/moses11726771"><i class="fab fa-twitter"></i></a>
+                <a href="https://wa.me/255621782837"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://linkedin.com/in/moses-kweka"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/kweka-jr"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2025 Moses Kweka. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">Web Development | Graphics Design | VR/AR Solutions</p>
+        </div>
     </footer>
+    
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Hide mobile menu after clicking a link
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For now, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-slide-up, .animate-slide-in-left, .animate-slide-in-right, .animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0) translateX(0)';
+                }
+            });
+        }
+        
+        // Set initial styles for animation elements
+        document.querySelectorAll('.animate-slide-up').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(50px)';
+            element.style.transition = 'all 0.6s ease-out';
+        });
+        
+        document.querySelectorAll('.animate-slide-in-left').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateX(-50px)';
+            element.style.transition = 'all 0.6s ease-out';
+        });
+        
+        document.querySelectorAll('.animate-slide-in-right').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateX(50px)';
+            element.style.transition = 'all 0.6s ease-out';
+        });
+        
+        document.querySelectorAll('.animate-fade-in').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transition = 'opacity 0.6s ease-out';
+        });
+        
+        // Run animation on initial load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
 </body>
 </html>
